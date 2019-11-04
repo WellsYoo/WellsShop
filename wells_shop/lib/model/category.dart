@@ -16,6 +16,8 @@ class CategoryModel {
     }
   }
 
+  String get mallCategoryName => null;
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['code'] = this.code;
