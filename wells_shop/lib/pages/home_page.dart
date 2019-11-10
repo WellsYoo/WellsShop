@@ -34,7 +34,6 @@ class _HomePageState extends State<HomePage>
       body: FutureBuilder(
         future: request('homePageContext',
             formData: {'lon': '115.02932', 'lat': '35.76189'}),
-        // request('homePageContext',formData: {'lon': '115.02932', 'lat': '35.76189'}),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var data = json.decode(snapshot.data.toString());
@@ -55,14 +54,13 @@ class _HomePageState extends State<HomePage>
             List<Map> floor3 = (data['data']['floor3'] as List).cast();
 
             return EasyRefresh(
-              footer: ClassicalFooter(
-                textColor: Colors.pink,
-                infoColor: Colors.pink,
-                noMoreText: "没有更多了",
-                loadingText: "加载中...",
-                loadReadyText: "上拉加载",
-                bgColor: Colors.white
-              ),
+                footer: ClassicalFooter(
+                    textColor: Colors.pink,
+                    infoColor: Colors.pink,
+                    noMoreText: "没有更多了",
+                    loadingText: "加载中...",
+                    loadReadyText: "上拉加载",
+                    bgColor: Colors.white),
                 child: ListView(
                   children: <Widget>[
                     SwiperDiy(swiperDateList: swiper),
