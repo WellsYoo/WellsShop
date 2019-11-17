@@ -4,16 +4,19 @@ import 'package:provide/provide.dart';
 import './provide/counter.dart';
 import './provide/child_category.dart';
 import './provide/category_goods_list.dart';
+import './provide/details_info.dart';
 import 'package:fluro/fluro.dart';
 import './routers/application.dart';
 import './routers/routers.dart';
+
 
 void main() {
   final providers = Providers();
   providers
   ..provide(Provider.function((context)=>Counter()))
   ..provide(Provider.function((context)=>ChildCategory()))
-  ..provide(Provider.function((context)=>CategoryGoodsListProvide()));
+  ..provide(Provider.function((context)=>CategoryGoodsListProvide()))
+  ..provide(Provider.function((context)=>DetailsInfoProvide()));
 
   runApp(ProviderNode(
     child: MyApp(),
