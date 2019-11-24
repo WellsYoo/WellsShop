@@ -5,9 +5,12 @@ import './provide/counter.dart';
 import './provide/child_category.dart';
 import './provide/category_goods_list.dart';
 import './provide/details_info.dart';
+import './provide/currentIndex.dart';
+import './provide/cart.dart';
 import 'package:fluro/fluro.dart';
 import './routers/application.dart';
 import './routers/routers.dart';
+ 
 
 
 void main() {
@@ -16,7 +19,9 @@ void main() {
   ..provide(Provider.function((context)=>Counter()))
   ..provide(Provider.function((context)=>ChildCategory()))
   ..provide(Provider.function((context)=>CategoryGoodsListProvide()))
-  ..provide(Provider.function((context)=>DetailsInfoProvide()));
+  ..provide(Provider.function((context)=>DetailsInfoProvide()))
+  ..provide(Provider.function((context)=>CartProvide()))
+  ..provide(Provider.function((context)=>CurrentIndexProvide()));
 
   runApp(ProviderNode(
     child: MyApp(),
